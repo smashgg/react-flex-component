@@ -4,8 +4,9 @@ var React = require('react'),
 
 Box = React.createClass({displayName: "Box",
 	getDefaultProps: function() {
+		var userAgent = (typeof navigator === 'undefined') ? '' : navigator.userAgent;
 		return {
-			prefix: (navigator.userAgent.indexOf('AppleWebKit') > -1) ? 'Webkit' : (navigator.userAgent.indexOf('MSIE') > -1) ? 'ms' : null,
+			prefix: (userAgent.indexOf('AppleWebKit') > -1) ? 'Webkit' : (userAgent.indexOf('MSIE') > -1) ? 'ms' : null,
 			justifyContent: 'flex-start',
 			alignItems: 'stretch'
 		};
@@ -39,8 +40,9 @@ Box = React.createClass({displayName: "Box",
 
 Item = React.createClass({displayName: "Item",
 	getDefaultProps: function() {
+		var userAgent = (typeof navigator === 'undefined') ? '' : navigator.userAgent;
 		return {
-			prefix: (navigator.userAgent.indexOf('AppleWebKit') > -1) ? 'Webkit' : (navigator.userAgent.indexOf('MSIE') > -1) ? 'ms' : null,
+			prefix: (userAgent.indexOf('AppleWebKit') > -1) ? 'Webkit' : (userAgent.indexOf('MSIE') > -1) ? 'ms' : null,
 			flex: '0 1 auto',
 			alignSelf: 'auto'
 		};
