@@ -29,9 +29,10 @@ Box = React.createClass({displayName: "Box",
 		style[(prefix && prefix !== 'ms') ? prefix + 'JustifyContent' : 'justifyContent'] = props.justifyContent;
 		// align-items
 		style[(prefix && prefix !== 'ms') ? prefix + 'AlignItems' : 'alignItems'] = props.alignItems;
+		props.style = style;
 
 		return (
-			React.createElement("div", {style: style}, 
+			React.createElement("div", props, 
 				props.children
 			)
 		);
@@ -61,9 +62,10 @@ Item = React.createClass({displayName: "Item",
 		style[prefix ? prefix + 'Flex' : 'flex'] = props.flex;
 		// align-self
 		style[(prefix && prefix !== 'ms') ? prefix + 'AlignSelf' : 'alignSelf'] = props.alignSelf;
+		props.style = style;
 
 		return (
-			React.createElement("div", {style: style}, 
+			React.createElement("div", props, 
 				props.children
 			)
 		);
